@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script type="text/javascript">
+    //啤酒两块钱一瓶
+    //4个瓶盖换一瓶
+    //2个空瓶换一瓶
+    //一开始有5瓶
+    //啤酒
+    var beer = 5,
+        //瓶子
+        bottles = 0,
+        //盖子
+        caps = 0,
+        result = 0;
+    //接受参数 酒 >资源
+    beers(beer, bottles, caps);
+
+    function beers(beeAr, bottles, caps) {
+        result += beer
+        console.log(result);
+        //转化成资源
+        //跳出Í
+        if (bottles + beer < 2 && caps + beer < 4) return;
+        tempBottles = bottles + beer;
+        tempCaps = caps + beer;
+        tempBeer = 0;
+        //计算酒数量
+        endBeer = Math.floor(tempBottles / 2) + Math.floor(tempCaps / 4);
+        //计算剩余资源
+        endBottles = tempBottles - Math.floor(tempBottles / 2) * 2;
+        endCaps = tempCaps - Math.floor(tempCaps / 4) * 4;
+        beers(endBeer, endBottles, endCaps)
+
+    }
+    </script>
+</body>
+
+</html>
